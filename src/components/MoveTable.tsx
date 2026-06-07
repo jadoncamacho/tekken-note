@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { Fragment, useState, useTransition } from "react";
 import { saveNote, deleteNote } from "@/app/actions/notes";
 
 type Move = {
@@ -223,9 +223,8 @@ export default function MoveTable({
               const isExpanded = expandedMove === move.id;
 
               return (
-                <>
+                <Fragment key={move.id}>
                   <tr
-                    key={move.id}
                     style={{
                       borderBottom: "1px solid var(--border)",
                       background: isExpanded ? "var(--surface)" : undefined,
@@ -276,10 +275,7 @@ export default function MoveTable({
                     )}
                   </tr>
                   {isLoggedIn && isExpanded && (
-                    <tr
-                      key={`${move.id}-notes`}
-                      style={{ background: "var(--surface-2)" }}
-                    >
+                    <tr style={{ background: "var(--surface-2)" }}>
                       <td colSpan={9} className="px-4 pb-4 pt-2">
                         <NoteEditor
                           characterId={characterId}
@@ -289,7 +285,7 @@ export default function MoveTable({
                       </td>
                     </tr>
                   )}
-                </>
+                </Fragment>
               );
             })}
           </tbody>
