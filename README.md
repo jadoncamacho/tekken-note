@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+# Tekken Notes
+Tekken Notes is a web application that serves as a resource for Tekken 8 frame data and allows personal note-taking on individual character moves.
+
 ## Getting Started
 
 First, run the development server:
@@ -16,9 +19,17 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 16** (App Router) — full-stack React framework; handles routing, server components, server actions, and API endpoints
+- **React 19** — UI rendering
+- **TypeScript** — static typing across the entire codebase
+- **Tailwind CSS v4** — utility-first styling
+- **NextAuth v5** — authentication (credentials-based email/password login, JWT sessions)
+- **bcryptjs** — password hashing
+- **Prisma ORM** — schema definition, migrations, and type-safe database client
+- **SQLite** (via `better-sqlite3`) — local single-file database
+- **Cheerio** — HTML scraping used to seed Tekken 8 frame data
 
 ## Learn More
 
@@ -29,8 +40,4 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
